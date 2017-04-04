@@ -15,6 +15,8 @@ For more details on chocolatey project, please visit [Chocolatey Project Page](h
   * .NET Framework 4+  
   [Note: the default installation attempts to install .NET 4.0 if you don't have it previously installed]
 
+>**Note:** You need to run below mentioned commands as an **'Administrator'**.
+
 <b>Installing Chocolatey Refference Document:</b>  
 [https://chocolatey.org/install](https://chocolatey.org/install)
 
@@ -59,6 +61,17 @@ you can make use of osquery's `--install` flag with below given command to insta
 ~~~~
 C:\ProgramData\osquery\osqueryd\osqueryd.exe --install
 ~~~~
+
+![OSQry_as_Service_cmd][Pic_4]
+
+You can also create `osquery-service-daemon` using Powershell `manage-osqueryd.ps1` script in `C:\ProgramData\osquery` folder.
+This same script can also be used to <b>start</b> and <b>stop</b> the `osqueryd` service.  
+
+![PS_manage_service_cmd][Pic_5]
+
+[Pic_4]: https://github.com/gauravtango/osquery/blob/master/Images/Win10-install-osqueryd-as-service.png  
+[Pic_5]: https://github.com/gauravtango/osquery/blob/master/Images/Win10_install_daemon_manageService_PS.png
+
 ---
 ### Creating osquery configuration file
 Creating configuration file makes it easier to run <code>osqueryi</code> and <code>osqueryd</code>. Insted of passing lots of command line options, both <code>osqueryi</code> and <code>osqueryd</code> can read those options from a configuration file from file-path <code>C:\ProgramData\osquery\osquery.conf</code>.

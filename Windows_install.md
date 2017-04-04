@@ -18,8 +18,36 @@ For more details on chocolatey project, please visit [Chocolatey Project Page](h
 <b>Installing Chocolatey Refference Document:</b>  
 [https://chocolatey.org/install](https://chocolatey.org/install)
 
+Using **'cmd.exe'** console:
+```
+C:> @powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
+```
+
+Output will look something like:
+![Install_Choco][Pic_1]
+
+Upgrade Chocolatey to latest version:
+~~~~
+C:> choco upgrade chocolatey
+~~~~
+
+Output:
+![Upgrade_Choco][Pic_2]
+
 <b>Installing osquery using chocolatey:</b>  
 [https://chocolatey.org/packages/osquery](https://chocolatey.org/packages/osquery)
+
+Installing `osquery` using **'choco.exe'** :
+~~~~
+C:> choco install osquery
+~~~~
+
+Output will look something like:
+![Install_Osquery][Pic_3]
+
+[Pic_1]: https://github.com/gauravtango/osquery/blob/master/Images/Win10_Install_Chocolaty.png
+[Pic_2]: https://github.com/gauravtango/osquery/blob/master/Images/Win10_Chocolatey-Upgrade.png
+[Pic_3]: https://github.com/gauravtango/osquery/blob/master/Images/win10_install_osquery.png
 
 By default `choco.exe` chocolatey will install the binaries, example packs and configurations bundle to ``c:\ProgramData\osquery``. Yet at this point, `osqueryd` has been not installed as service.  
 To install this, you can either pass Chocolatey the ``--params='/InstallService'`` flag during install command i.e.:

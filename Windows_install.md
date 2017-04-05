@@ -146,3 +146,7 @@ Once the configuration file is in place, we can start osqueryd using any of belo
 
 3. Using **Run-->service.msc**  
 Locate service <b>'osquery service daemon'</b> and start it.
+
+![service_msc_SShot][Pic_6]
+
+[Pic_6]: https://github.com/gauravtango/osquery/blob/master/Images/Win10_Osquery_daemon_start.png

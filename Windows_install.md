@@ -82,7 +82,8 @@ Creating configuration file makes it easier to run <code>osqueryi</code> and <co
 * A list of packs to include more specific scheduled queries.
 
 Create and open the configuration file at:
-<code>C:\ProgramData\osquery\osquery.conf</code>  
+<code>C:\ProgramData\osquery\osquery.conf</code>
+>Note: make sure that created file had proper extention as `osquery.conf` and not `osquery.conf.txt`.
 
 The configuration file uses the JSON format. Copy the following content into the file:  
 ```css
@@ -90,13 +91,10 @@ The configuration file uses the JSON format. Copy the following content into the
   "options": {
     "config_plugin": "filesystem",
     "logger_plugin": "filesystem",
-    "logger_path": "C:\ProgramData\osquery\log",
     "disable_logging": "false",
     "log_result_events": "true",
     "schedule_splay_percent": "10",
-    "pidfile": "C:\ProgramData\osquery\osqueryd.pidfile",
     "events_expiry": "3600",
-    "database_path": "C:\ProgramData\osquery\osquery.db",
     "verbose": "false",
     "worker_threads": "2",
     "enable_monitor": "true",
@@ -133,6 +131,10 @@ The configuration file uses the JSON format. Copy the following content into the
   }
 }
 ```
+Save and close the file, then validate it using the following <b>PowerShell</b> command:  
+`` PS C:\ProgramData\osquery\osqueryd> .\osqueryd.exe -config_check ``
+If there's an error, the output will indicate the location of the error so you can fix it.
+
 ---  
 ### Running osqueryd
 
@@ -143,6 +145,8 @@ Once the configuration file is in place, we can start osqueryd using any of belo
 
 2. Using **PowerShell**  
 ``sc.exe start osqueryd``
+**OR**
+``PS C:\ProgramData\osquery> .\manage-osqueryd.ps1 -start ``
 
 3. Using **Run-->service.msc**  
 Locate service <b>'osquery service daemon'</b> and start it.
